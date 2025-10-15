@@ -51,7 +51,9 @@ public class Noticia {
     }
 
     public boolean hasCategoria(String categoria){
+        categoria = categoria.toLowerCase();
         for (String c : categorias) {
+            c = c.toLowerCase();
             if(categoria.equals(c))
                 return true;
         }
@@ -60,7 +62,6 @@ public class Noticia {
 
     @Override
     public String toString() {
-        return "Noticia [title=" + title + ", description=" + description + ", creator=" + creator + ", categorias="
-                + categorias + "]";
+        return title + "|" + creator + "|" + description;
     }
 }
